@@ -1,0 +1,393 @@
+<html>
+    <head>
+        <title>{{n.1}}</title>
+<!--<style>
+/* GLOBAL STYLES */
+body {
+    padding-top: 5em;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* DEMO-SPECIFIC STYLES */
+  .typewriter h1{
+    color: #fff;
+    font-family: monospace;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(30, end),
+      blink-caret .5s step-end infinite;
+  }
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange }
+  }
+</style>-->
+</head>
+<body>
+<!--<div class="typewriter">-->
+{%for n in table%}
+    {{n.0}}<br><br>{{n.1}}<br><br>{{n.2}}<br><br>{{n.3}}<br><br>{{n.4}}<br><br>{{n.5}}<br><br>
+    {{n.6}}<br><br>{{n.7}}<br><br>{{n.8}}<br><br>{{n.9}}<br><br>{{n.10}}<br><br>{{n.11}}<br><br>
+    {{n.12}}<br><br>{{n.13}}<br><br>{{n.14}}<br><br><img src="{{n.15}}">
+{%endfor%}
+<!--</div>-->
+</body>
+</html>
+
+<!--<html>
+    <head>
+        <title>{{n.1}}</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+    
+    :root {
+        --background: #f9d877;
+    }
+    
+    body {
+        padding: 4rem 2rem 2rem;
+        min-height: 100vh;
+        background: linear-gradient(to bottom right, rgb(173, 83, 137), rgb(60, 16, 83));
+        font-size: 1.2rem;
+        font-family: "Patrick Hand";
+        display: grid;
+        grid: 2rem auto / repeat(2, 50%);
+        grid-column-gap: 2rem;
+        justify-content: center;
+        width: 100%;
+        .folder {
+            grid-column: 1 / -1;
+        }
+    }
+    
+    p {
+        margin-bottom: 1rem;
+    }
+    
+    .tab {
+        font-family: "Patrick Hand";
+        text-transform: uppercase;
+        line-height: 0.8;
+        display: inline-block;
+        margin-left: -35px;
+        filter: drop-shadow(0px -3px 2px rgba(0, 0, 0, 0.05));
+        border: none;
+        border-radius: 6px 6px 0 0;
+        position: relative;
+        margin-right: 4rem;
+        background: var(--background);
+        white-space: nowrap;
+        cursor: pointer;
+        background: var(--background);
+        &:focus {
+            outline: none;
+            span {
+                border-bottom: 2px solid;
+                border-radius: 0;
+            }
+        }
+        &:first-of-type {
+            margin-left: 30px;
+        }
+        div {
+            background: var(--background);
+            padding: 6px 0;
+            position: relative;
+            z-index: 10;
+        }
+        span {
+            display: inline-block;
+            border: 2px solid transparent;
+            padding: 6px 15px 6px;
+            border-radius: 5px;
+            z-index: 5;
+            position: relative;
+            font-size: 140%;
+            color: #fff;
+            min-width: 6rem;
+        }
+        &:before,
+        &:after {
+            content: "";
+            height: 100%;
+            position: absolute;
+            background: var(--background);
+            border-radius: 8px 8px 0 0;
+            width: 30px;
+            top: 0;
+        }
+        &:before {
+            right: -16px;
+            transform: skew(25deg);
+            border-radius: 0 8px 0 0;
+        }
+        &:after {
+            transform: skew(-25deg);
+            left: -16px;
+            border-radius: 8px 0 0 0;
+        }
+        &.active {
+            z-index: 50;
+            position: relative;
+            span {
+                background: white;
+                box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                color: black;
+            }
+        }
+    }
+    
+    .content {
+        border-radius: 10px;
+        position: relative;
+        width: 100%;
+        #tab-1 {
+            display: block;
+        }
+        &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            border-radius: inherit;
+        }
+        &__inner {
+            font-family: "Yomogi", sans-serif;
+            display: none;
+            background: var(--background);
+            border-radius: inherit;
+            padding: 1rem;
+            filter: drop-shadow(0px -2px 2px rgba(0, 0, 0, 0.1));
+            z-index: 5;
+        }
+    }
+    
+    .folder {
+        margin: 1rem auto;
+        max-width: 50rem;
+        width: 100%;
+        scrollbar-height: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+        ::-webkit-scrollbar {
+            background: transparent; /* Chrome/Safari/Webkit */
+            display: none;
+        }
+    }
+    
+    .page {
+        padding: 1.5rem;
+        border-radius: 2px;
+        min-height: 20rem;
+        line-height: 160%;
+        background-color: #f9f9f9;
+        filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.15));
+        background-image: linear-gradient(#e4e4e4 1px, transparent 1px);
+        background-size: 8% 8%, 2px 2px;
+    }
+    
+    .tabs {
+        padding: 2rem 0 0 0;
+        width: 100%;
+        margin: 0 0.5rem;
+        overflow-x: auto;
+        width: calc(100% - 1rem);
+        white-space: nowrap;
+        @media(min-width: 50rem) {
+            margin: 0 2rem;
+            width: calc(100% - 4rem);
+        }
+    }
+    
+    #solid:checked ~ .folder {
+        .tab,
+        .content__inner {
+            &:nth-of-type(1) {
+                --background: #af4d98;
+            }
+            &:nth-of-type(2) {
+                --background: #d66ba0;
+            }
+            &:nth-of-type(3) {
+                --background: #e5a9a9;
+            }
+            &:nth-of-type(4) {
+                --background: #6cb6bb;
+            }
+        }
+        .tab {
+            border: 2px solid;
+            border-width: 2px 0 0;
+            &:before,
+            &:after {
+                top: -2px;
+                border-top: 2px solid;
+            }
+            &:before {
+                border-right: 2px solid;
+            }
+            &:after {
+                border-left: 2px solid;
+            }
+            &.active {
+                span {
+                    border: 2px solid;
+                }
+                &:focus span {
+                    outline: 1px solid rgba(255, 255, 255, 0.7);
+                }
+            }
+            &:not(.active) {
+                border-bottom: 2px solid;
+                &:before,
+                &:after {
+                    box-shadow: 0 1.5px 0 black;
+                }
+            }
+        }
+        .content {
+            top: -2px;
+            left: -2px;
+            &__inner {
+                box-shadow: 0 0 0 1.5px black;
+            }
+        }
+        .page {
+            border: 2px solid;
+        }
+    }
+    
+    #shadow:checked ~ .folder {
+        .tab {
+            --background: linear-gradient(to bottom, #fee9a5, #f9d877);
+            span {
+                color: black;
+            }
+            &:focus span {
+                border-bottom-color: black;
+            }
+            &.active:focus span {
+                border-color: black;
+            }
+        }
+        .content__inner {
+            --background: linear-gradient(to bottom, #f9d877, #fee9a5);
+        }
+    }
+    
+    
+    /* radio buttons styling */
+    input.variation {
+        display: none;
+        + label {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            cursor: pointer;
+            color: white;
+            .circle {
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                border: 3px solid white;
+            }
+        }
+        &:checked + label .circle {
+            background: white;
+            box-shadow: inset 0 0 0 3px #3c1053;
+        }
+        &:nth-of-type(1) + label {
+            justify-self: flex-end;
+        }
+    }
+</style>
+<script>
+    function openTab(evt, tab) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("content__inner");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tab");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tab).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+    
+    //Horizontal scroll for the tabs on mousewheel. If tabs are longer than the content section, there's a scroll bar but it's hidden to retain the design.
+    if (window.innerWidth > 800) {
+        const scrollContainer = document.querySelector(".tabs");
+    
+        scrollContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            scrollContainer.scrollLeft += evt.deltaY;
+        });
+    }
+    
+</script>
+</head>
+<body>
+    input#solid.variation(type="radio" value="1" name="border" checked)
+    label(for="solid")
+        span.circle
+        span Flat UI
+    
+    input#shadow.variation(type="radio" value="2" name="border")
+    label(for="shadow") 
+        span.circle
+        span Realistic
+    
+    .folder
+        .tabs
+            button.tab.active(onclick="openTab(event, 'tab-1')")
+                div
+                    span Work stuff
+            button.tab(onclick="openTab(event, 'tab-2')")
+                div
+                    span Food
+            button.tab(onclick="openTab(event, 'tab-3')")
+                div
+                    span Baking
+            button.tab(onclick="openTab(event, 'tab-4')")
+                div
+                    span Cat
+        .content
+            #tab-1.content__inner
+                .page
+                    p Productize. Optics accountable talk. Thought shower. High performance keywords market-facing drink from the firehose, or you better eat a reality sandwich before you walk back in that boardroom, but accountable talk knowledge process outsourcing. 
+                    p What's our go to market strategy? cross functional teams enable out of the box brainstorming nor zeitgeist viral engagement. Deep dive. Organic growth quick sync, feed the algorithm. 
+            #tab-2.content__inner
+                .page
+                    p I love cheese, especially the big cheese gouda. Monterey jack red leicester roquefort cheese and wine fromage frais smelly cheese melted cheese dolcelatte. Fromage smelly cheese manchego paneer cheese and wine danish fontina macaroni cheese red leicester. 
+                    p Stilton fondue queso emmental when the cheese comes out everybody's happy croque monsieur queso paneer. Say cheese pecorino swiss boursin halloumi cottage cheese taleggio boursin. 
+            #tab-3.content__inner
+                .page
+                    p Cupcake ipsum dolor sit amet jujubes tart. Tiramisu icing gingerbread halvah cake. Marzipan cake soufflé cookie brownie ice cream cupcake. Dragée croissant bonbon ice cream oat cake jelly cookie. Wafer candy dessert jelly jelly-o. 
+                    p Oat cake donut powder pastry wafer brownie cupcake caramels bear claw. Bonbon caramels oat cake cake shortbread. Cake cheesecake candy icing bear claw marshmallow icing jelly. Halvah biscuit pudding danish cookie bonbon gummies.
+            #tab-4.content__inner
+                .page
+                    p Miaow then turn around and show you my bum flee in terror at cucumber discovered on floor. Terrorize the hundred-and-twenty-pound rottweiler and steal his bed, not sorry sleep on dog bed, force dog to sleep on floor and grab pompom in mouth and put in water dish cats are fats i like to pets them they like to meow back present belly, scratch hand when stroked. 
+                    p Bleghbleghvomit my furball really tie the room together love asdflkjaertvlkjasntvkjn (sits on keyboard) but bawl under human beds.
+    
+</body>
+</head>-->

@@ -1,0 +1,98 @@
+<body>
+    <div class="login-page">
+      <div class="form">
+        <form method="post">
+            {% csrf_token %}
+            <label for="diet">Select Diet:</label>
+            <select name="diet" id="diet">
+              <option value="Any">Any</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="High Protein Vegetarian">High Protein Vegetarian</option>
+              <option value="Non Vegeterian">Non Vegeterian</option>
+              <option value="Eggetarian">Eggetarian</option>
+              <option value="Diabetic Friendly">Diabetic Friendly</option>
+              <option value="High Protein Non Vegetarian">High Protein Non Vegetarian</option>
+              <!--<option value="Gluten Free or Sugar Free">Gluten Free or Sugar Free</option>-->
+              <option value="No Onion No Garlic (Sattvic)">No Onion No Garlic (Sattvic)</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Gluten Free">Gluten Free</option>
+              <option value="Sugar Free Diet">Sugar Free Diet</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <label for="course">Select Course:</label>
+            <select name="course" id="course">
+              <option value="Any">Any</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Side Dish">Side Dish</option>
+              <option value="Snack">Snack</option>
+              <option value="Dinner">Dinner</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Appetizer">Appetizer</option>
+              <option value="Main Course">Main Course</option>
+              <option value="South Indian Breakfast">South Indian Breakfast</option>
+              <option value="World Breakfast">World Breakfast</option>
+              <option value="North Indian Breakfast">North Indian Breakfast</option>
+              <option value="Indian Breakfast">Indian Breakfast</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <label for="cuisine">Select Cuisine:</label>
+            <select name="cuisine" id="cuisine">
+              <option value="Any">Any</option>
+              <option value="Indian">Indian</option>
+              <option value="Continental">Continental</option>
+              <option value="North Indian Recipes">North Indian Recipes</option>
+              <option value="South Indian Recipes">South Indian Recipes</option>
+              <option value="Italian Recipes">Italian Recipes</option>
+              <option value="Bengali Recipes">Bengali Recipes</option>
+              <option value="Maharashtrian Recipes">Maharashtrian Recipes</option>
+              <option value="Kerala Recipes">Kerala Recipes</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Fusion">Fusion</option>
+              <option value="Rajasthani">Rajasthani</option>
+              <option value="Mexican">Mexican</option>
+              <option value="Andhra">Andhra</option>
+              <option value="Gujarati Recipes">Gujarati Recipes</option>
+              <option value="Goan Recipes">Goan Recipes</option>
+              <option value="Punjabi">Punjabi</option>
+              <option value="Chettinad">Chettinad</option>
+              <option value="Asian">Asian</option>
+              <option value="Thai">Thai</option>
+              <option value="Chinese">Chinese</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <label for="time">How fast do you want food:</label>
+            <select name="time" id="time">
+              <option value="Any">Any</option>
+              <option value="Under30">Under 30 Minutes</option>
+              <option value="Under60">Under 1 Hours</option>
+              <option value="Under120">Under 2 Hours</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <button type="submit">Find me</button>
+        </form>
+      </div>
+    </div>
+    
+    
+  <!--{% with count=0 %}
+    {% for n in table %}
+      {% for m in n %}
+        {{ count|add:"1" }}
+        {% if count == 15 %}
+          {{m}} link|
+        {% else %}
+          {{m}} | {{count}}
+        {% endif %}
+      {% endfor %}<br><br>
+      {{ count|add:"-15" }}
+    {% endfor %}
+  {% endwith %}-->
